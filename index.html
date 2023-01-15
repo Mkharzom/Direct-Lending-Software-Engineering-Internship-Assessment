@@ -16,15 +16,15 @@
         <form method="post" action="php/submit.php" onsubmit="submitForm()">
             <div class="form-fields">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="">
+                <input type="text" id="name" name="name" required>
                 <label for="dob">DOB:</label>
-                <input type="date" id="dob" name="dob">
+                <input type="date" id="dob" name="dob" required>
                 <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
+                <input type="text" id="address" name="address" required>
                 <label for="postcode">Postcode:</label>
-                <input type="text" id="postcode" name="postcode" onchange="getState()">
+                <input type="text" id="postcode" name="postcode" onchange="getState()" required>
                 <label for="state">State:</label>
-                <input type="text" id="state" name="state" disabled value="">
+                <input type="text" id="state" name="state" disabled required>
             </div>
             <div class="form-submit">
                 <input type="submit" value="Submit">
