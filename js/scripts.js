@@ -14,6 +14,7 @@ function getState() {
                 }
                 catch(err){
                     document.getElementById("state").value = "Postcode not found";
+                    alert('check your Postcode');
                 }
             } 
         }
