@@ -40,8 +40,9 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `name`, `dop`, `address`, `postocde_id`) VALUES
-(62, 'Mohammed Kharzom', '0000-00-00', 'Jalan Melawati 1 , Taman Melawati , 53100', 53100);
-
+(1, 'Andy', '1990-09-10', 'Jalan 1, 2 and 3', 35000),
+(2, 'Jack', '2000-01-01', 'Jalan 4, 5 and 6', 35000),
+(3, 'Ong', '1966-05-30', 'Jalan 7, 8 and 9', 35000);
 -- --------------------------------------------------------
 
 --
@@ -60,9 +61,9 @@ CREATE TABLE `postcode` (
 
 INSERT INTO `postcode` (`id`, `state`, `postcode`) VALUES
 (1, 'Taman Melwati', 53100),
-(2, 'Jalan 1, 2 and 3', 35000),
-(3, 'Jalan 4, 5 and 6', 50000),
-(4, 'Jalan 7, 8 and 9', 80000);
+(2, 'Perak', 35000),
+(3, 'Wilayah Persekutuan Kuala Lumpur', 50000),
+(4, '	Johor', 80000);
 
 --
 -- Indexes for dumped tables
