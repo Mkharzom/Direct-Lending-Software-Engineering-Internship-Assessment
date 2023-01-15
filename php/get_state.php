@@ -20,7 +20,6 @@ $result = $db->query($query);
 if(!$result){
     die('There was an error running the query [' . $db->error . ']');
 }
-$testdd = "ERR";
 // Fetch the result
 $row = $result->fetch_assoc();
 $state = $row['state'];

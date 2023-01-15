@@ -19,17 +19,35 @@
     }
 
     // Prepare the SQL query
-    $query = "INSERT INTO `customer` (`id`, `name`, `dop`, `address`, `postocde_id`) VALUES ('0', '$dbname', '$dbdob', '$dbadd', '$dbpost')";
-    $stmt = mysqli_prepare($conn, $query);
+    $query = "SELECT id FROM postcode WHERE postcode = '$dbpost'";
+    $result = $conn->query($query);
+    $row = $result->fetch_assoc();
+    if (!$row) {
+        $postid =0;
+    } 
+    else {
+        $postid = $row['id'];
+    }
+    $sql = "INSERT INTO `customer` (`id`, `name`, `dop`, `address`, `postocde_id`) VALUES ('0', '$dbname', '$dbdob', '$dbadd', '$postid')";
+    $stmt = mysqli_prepare($conn, $sql);
 
     // Execute the query
     if (mysqli_stmt_execute($stmt)) {
         // Query succeeded
-        $response = array(
-            'status' => 'success',
-            'message' => 'Data inserted successfully'
-            
-        );
+        if($postid=='0'){
+            $response = array(
+                'status' => 'success',
+                'message' => 'Data inserted successfully , but without State'
+                
+            );
+        }
+        else{
+            $response = array(
+                'status' => 'success',
+                'message' => 'Data inserted successfully'
+                
+            );
+        }
     } else {
         // Query failed
         echo "<script>alert('Data not inserted successfully');</script>";
@@ -46,6 +64,5 @@
     echo json_encode($response);
     
     echo "<script>alert('Data inserted successfully'); setTimeout(function(){ window.location.href = '../index.html'; }, 1000);</script>";
-   // header("Location: ../index.html");
 
 ?>
