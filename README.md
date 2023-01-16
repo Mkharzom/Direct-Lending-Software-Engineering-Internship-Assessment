@@ -22,3 +22,8 @@ assumes that the postcodes are only 3 postcodes: 35000, 50000 and 80000 and only
 assumes that there is no need to make input form for postcodes.
 assumes that Database is Mysql and using xampp.
 asuumes that the program uses "root" as the MySQL username and assumes there is no password set for the root user.
+
+
+this is Query for question NO.6
+
+SELECT name, (YEAR(CURRENT_DATE)-DATE_FORMAT(dop,'%Y')) AS age, address, postcode, state FROM customer JOIN postcode ON customer.postocde_id = postcode.id;
